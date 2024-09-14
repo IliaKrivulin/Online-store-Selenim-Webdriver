@@ -1,7 +1,7 @@
 const {expect} = require("chai");
 const {By, Builder, until} = require("selenium-webdriver");
 
-describe.only("Intershop", async function  () {
+describe("Intershop", async function  () {
 
         it("Checkout testing", async function ()  {
 
@@ -10,7 +10,6 @@ let driver = await new Builder().forBrowser("chrome").build()
 
 // open page
 await driver.get("http://intershop5.skillbox.ru/");
-
 
 const entranceClick = By.css("a.account"); // Кнопка "Войти"
 const nameMailField = By.css("input#username"); // Поле для ввода имени пользователя или почты
@@ -33,9 +32,7 @@ const regionField = By.css("input#billing_state"); // Поле для ввода
 const postCodeField = By.css("input#billing_postcode"); // Поле для ввода почтового индекса
 const phoneField = By.css("input#billing_phone"); // Поле для ввода телефона
 const commentsField = By.css("textarea#order_comments") // Поле для ввода комментария
-
 const checkoutButton = By.css("button#place_order") // Кнопка "Оформить заказ"
-
 
 await driver.findElement(entranceClick).click();
 await driver.findElement(nameMailField).sendKeys("2@skillbox.ru"); // Ввод почты
@@ -50,7 +47,6 @@ await driver.findElement(applyCouponClick).click(); // Клик на кнопк�
 await driver.findElement(catalogClick).click(); // Клик по вкладке "Каталог"
 await driver.findElement(basketClick).click(); // Клик по вкладке "Корзина"
 await driver.findElement(buttonOrderClick).click(); // Оформить заказ
-
 // Ввод текста в поля
 await driver.findElement(nameField).sendKeys("Тестовый"); // Ввод имен
 await driver.findElement(surnameField).sendKeys("Пользователь"); // Ввод фамилии
@@ -61,10 +57,5 @@ await driver.findElement(postCodeField).sendKeys("197197"); // Ввод инде
 await driver.findElement(phoneField).sendKeys("+79998887766"); // Ввод номера телефона
 await driver.findElement(commentsField).sendKeys("Это было интересное задание!"); // Ввод комментария
 await driver.findElement(checkoutButton).click(); // Клик по кнопке "Оформить заказ"
-
-
-//await driver.quit();
-
-
 });
 });

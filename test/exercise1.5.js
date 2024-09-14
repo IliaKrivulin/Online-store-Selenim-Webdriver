@@ -11,7 +11,6 @@ let driver = await new Builder().forBrowser("chrome").build()
 // open page
 await driver.get("http://intershop5.skillbox.ru/");
 
-
 const searchLine = By.css("input.search-field"); // Строка для поиска
 const searchButtonClick = By.css("i.fa.fa-search"); // Кнопка поиска
 const phoneSelectionClick = By.css("a[data-product_id='2103']"); // Кнопка "В корзину"
@@ -27,7 +26,6 @@ const basketClick = By.css("li#menu-item-29 > a") // вкладка "Корзи�
 const deleteFirstProductLocator = By.css("[data-product_id = '2103']") // Крестик для удаления товара
 const buttonDeleteCouponClick = By.css("a.woocommerce-remove-coupon") // Кнопка "Удалить" для купона
 const buttonOrderClick = By.css("a.checkout-button.button.alt.wc-forward"); // Кнопка "Оформить заказ"
-
 
 await driver.findElement(searchLine).sendKeys("Телефон"); // Ввод данных в строку поиска
 await driver.findElement(searchButtonClick).click(); // Выполнение поиска
@@ -48,7 +46,5 @@ await driver.findElement(buttonDeleteCouponClick).click(); // Клик по кн
 await driver.findElement(catalogClick).click(); // Клик по вкладке "Каталог"
 await driver.findElement(basketClick).click(); // Клик по вкладке "Корзина"
 await driver.findElement(buttonOrderClick).click(); // Оформить заказ
-
-
 });
 });

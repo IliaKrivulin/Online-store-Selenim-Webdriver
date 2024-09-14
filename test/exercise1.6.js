@@ -23,7 +23,6 @@ const nameMailField = By.css("input#username"); // Поле для ввода и
 const passwordField = By.css("input#password"); // Поле для ввода пароля
 const entranceButtonClick = By.css("button.woocommerce-button.button.woocommerce-form-login__submit"); // Кнопка "Войти"
 
-
 await driver.findElement(entranceClick).click(); // Клик по кнопке "Войти"
 await driver.findElement(entranceAccountClick).click(); // Клик по кнопке "Войти" в аккаунт
 await driver.findElement(registrationButton).click(); // Клик по кнопке "Зарегестрироваться"
@@ -36,10 +35,5 @@ await driver.findElement(entranceClick).click(); // Клик по кнопке "
 await driver.findElement(nameMailField).sendKeys("6@skillbox.ru"); // Ввод почты
 await driver.findElement(passwordField).sendKeys("pass1234"); // Ввод пароля
 await driver.findElement(entranceButtonClick).click(); // Клик по кнопке "Войти"
-
-
-//await driver.quit();
-
-
 });
 });
